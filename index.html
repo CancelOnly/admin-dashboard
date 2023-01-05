@@ -13,49 +13,46 @@
     <header>
     
     <div class="row up">
-   <div class="container">
-    <input placeholder="" required="" class="input" name="text" type="text">
-    <div class="icon">
-        <svg viewBox="0 0 512 512" class="ionicon" xmlns="http://www.w3.org/2000/svg">
-            <title>Search</title>
-            <path stroke-width="32" stroke-miterlimit="10" stroke="currentColor" fill="none" d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"></path>
-            <path d="M338.29 338.29L448 448" stroke-width="32" stroke-miterlimit="10" stroke-linecap="round" stroke="currentColor" fill="none"></path>
-        </svg>
-    </div>
-</div>
-        
-        
+         
    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg>
+   
+    <div class="greeting">
+    <h2>Welcome</h2>
+    <h3>Mr. Rick</h3>
+    </div>
    
     <img class="avatar" src="./img/rick.jpg" alt="avatar">
     </div>
    
     <div class="row down">
-    <div class="greeting">
-    <h2>Welcome</h2>
-    <h3>Mr. Rick</h3>
-    </div>
+        
+    <div class="form">
+    <input class="input" placeholder="Search..." required="" type="text">
+    <span class="input-border"></span>
+    </div>    
     
     <div class="btns">
     <ul>
-    <li>Overview</li>
-    <li>Users</li>
-    <li>Settings</li>
+    <button class="button" role="button"><li>Overview</li></button>
+    <button class="button" role="button"><li>New</li></button>
+    <button class="button" role="button"><li>Upload</li></button>
+    <button class="button" role="button"><li>Share</li></button>
     </ul>
     </div>
+           
+    
+    
     </div>
    
- 
-   
     
-   
-   
- 
-   
     </header>
  
     <nav>
-    
+        <div class="logo-bg">
+        <img class="logo" src="./img/evory.png" alt="logo">
+        </div>
+        
+    <div class="nav-style">
     <ul>
         <li>Home</li>
         <li>Profile</li>
@@ -63,18 +60,19 @@
         <li>History</li>
         <li>Tasks</li>
         <li>Communities</li>
-        
+    </ul>
+    <ul>
         <li>Settings</li>
         <li>Support</li>
         <li>Privacy</li>
     </ul>
-
+    </div>
     </nav>
 
     <main>
         
         <div class="main-content">
-            
+            <h2 class="title">Overview</h2>
             <div class="card blue">
                 <p>App 1</p>
             </div>
@@ -112,19 +110,23 @@
     
     <aside>
         
-        <div class="anounc card">
-        <h2>Announcements</h2>
-        
+        <div class="aside card">
+        <h2 class="title">Announcements</h2>
+              
         <h3>Site Maintence</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus omnis doloremque iusto, soluta quia eaque a sunt laboriosam maiores consectetur...</p>
         
         <h3>Pay Day</h3>
-        
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam fuga reiciendis possimus debitis a eius qui voluptatibus maxime...</p> 
+                
         <h3>Update Privacy Policy</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur assumenda consequatur provident error architecto, iste veritatis...</p>
+       
         </div>
         
         
-        <div class="trending card">
-        <h2>Trending</h2>
+        <div class="aside card">
+        <h2 class="title">Trending</h2>
         
         <h3>Tegan</h3>
         
