@@ -147,7 +147,7 @@ nav ul li {
   padding-left: 2.5rem;
 }
 
-nav ul li:hover {
+nav ul li:not(:first-child):hover {
   background: var(--light-color);
 }
 
