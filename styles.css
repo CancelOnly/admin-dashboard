@@ -1,32 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=VT323&display=swap");
 
-* {
+:root {
   --main-color: #2c2c34;
   --dark-color: #0a0b18;
   --half-color: #20202a;
   --light-color: #37373e;
   color: white;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+
+  --gh-avatar: url("https://github.com/CancelOnly.png");
+  --gh-avatar2: url("https://github.com/CancelOnly.png");
+  --gh-avatar3: url("https://github.com/CancelOnly.png");
+  --gh-avatar4: url("https://github.com/CancelOnly.png");
 }
 
 body {
   font-size: 12px;
-  font-family: "Roboto", sans-serif;
-  box-sizing: border-box;
   height: 100vh;
   width: 100vw;
+  box-sizing: border-box;
   background: var(--dark-color);
-
   display: grid;
-  grid-template-columns: 11rem 1fr 1fr 1fr 1.25fr;
+  overflow: hidden;
+  grid-template-areas:
+    "nav header header header"
+    "nav content content content";
+
+  grid-template-columns: 12rem 4fr;
   grid-template-rows: 6.5rem 1fr 1fr 1fr 1fr;
 }
 
 header {
+  grid-area: header;
   display: grid;
-  grid-column: 2 / 6;
+  grid-column: 2 / 7;
+  
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 3.3rem;
 
+position: sticky;
   background: var(--main-color);
 }
 
@@ -34,6 +47,7 @@ svg {
   height: 30px;
   width: 30px;
   fill: white;
+  color: white;
 }
 
 .up {
@@ -70,7 +84,6 @@ svg {
 }
 
 .logo-bg {
-  position: absolute;
   margin-top: -6.5rem;
   height: 6.5rem;
   width: 11rem;
@@ -78,17 +91,28 @@ svg {
 }
 
 .logo {
-  display: block;
+  /* display: block;
   margin-left: auto;
-  margin-right: auto;
-  margin-top: 2rem;
+  margin-right: auto; */
+  /* margin-top: 2rem;
+  height: 2.5rem;
+  width: 6.75rem; */
+  background: var(--half-color);
+  width: 10rem;
+  height: 6.5rem;
+}
+
+img {
   height: 2.5rem;
   width: 6.75rem;
 }
 
 nav {
-  grid-row: 2 / 6;
+  grid-area: nav;
   background: #2c2c34;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden;
 }
 
 .nav-style {
@@ -113,73 +137,129 @@ nav ul li:hover {
   background: var(--light-color);
 }
 
-aside {
-  display: grid;
-  grid-column: 5 / 6;
-  grid-row: 2 / 6;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 3rem;
-  padding: 1rem;
-  padding-right: 5.5rem;
-  padding-top: 4.5rem;
-}
-
-.aside {
-  padding: 1rem;
-}
-
-.aside h3 {
-  font-size: 1rem;
-
-}
-
-main {
-  display: grid;
-  grid-column: 2 / 5;
-  grid-row: 2 / 6;
-  padding-top: 3rem;
+.gh-avatar {
+  border-radius: 50%;
 }
 
 .title {
   position: absolute;
   font-size: 1.3rem;
-  margin-top: -3.2rem;
-  margin-left: -1rem;
+  margin-top: -2.5rem;
   padding: 0rem 0rem 1rem 0rem;
 }
 
-.main-content {
+/* .main-content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1.7fr 1fr;
   gap: 1rem;
   padding: 1.5rem;
+} */
+
+.content {
+  grid-area: content;
+  display: grid;
+  padding: 1.8rem;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: min-content 1fr;
+  gap: 1rem;
+  grid-template-areas:
+    "projects announcements"
+    "projects trending";
+
+  height: 100vh;
 }
 
-.big {
+.content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.projects {
+  grid-area: projects;
+}
+
+.projects .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 3fr));
+  grid-auto-rows: 13rem;
+  gap: 1.2rem;
+  padding-bottom: 1.5rem;
+}
+
+.projects .card {
+  background: var(--main-color);
+  border-left: 10px solid rgb(170, 170, 170);
+  display: flex;
+  flex-direction: column;
+  padding: 1.3rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px -4px rgb(0 0 0 / 0.1);
+}
+
+.projects .blue {
+  background: #4488c5;
+}
+
+.projects .yellow {
+  background: #df9c28;
+}
+
+.projects .red {
+  background: #c55656;
+}
+
+.projects .big {
   grid-column: 1 / 4;
   grid-row: 2 / 3;
   border-radius: 2.5px;
 
   background: var(--half-color);
 }
+
+.projects .card-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.projects .card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.projects .icons {
+  margin-top: auto;
+  align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0rem;
+  align-items: center;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  width: 1rem;
+}
+
 .card {
-  border-radius: 2.5px;
-
   background: var(--main-color);
+  padding: 2rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px -4px rgb(0 0 0 / 0.1);
 }
 
-.blue {
-  background: #4488c5;
+.announcements {
+  grid-area: announcements;
 }
 
-.yellow {
-  background: #df9c28;
+.announcement {
+  width: 25ch;
+  padding: 1rem 0;
 }
 
-.red {
-  background: #c55656;
+.trending {
+  grid-area: trending;
 }
 
 /* Buttons*/
